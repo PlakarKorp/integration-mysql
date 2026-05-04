@@ -37,38 +37,47 @@
     },
     "single_transaction": {
       "type": "boolean",
-      "description": "Use --single-transaction for a consistent InnoDB snapshot without locking tables (default: true). Strongly recommended for production InnoDB databases. MyISAM tables still require table locks even with this option."
+      "default": true,
+      "description": "Use --single-transaction for a consistent InnoDB snapshot without locking tables. Strongly recommended for production InnoDB databases. MyISAM tables still require table locks even with this option."
     },
     "routines": {
       "type": "boolean",
-      "description": "Include stored procedures and functions via --routines (default: true)."
+      "default": true,
+      "description": "Include stored procedures and functions via --routines."
     },
     "events": {
       "type": "boolean",
-      "description": "Include event scheduler events via --events (default: true)."
+      "default": true,
+      "description": "Include event scheduler events via --events."
     },
     "triggers": {
       "type": "boolean",
-      "description": "Include triggers (default: true). Set to false to pass --skip-triggers."
+      "default": true,
+      "description": "Include triggers. Set to false to pass --skip-triggers."
     },
     "no_data": {
       "type": "boolean",
-      "description": "When true, passes --no-data so only DDL statements are dumped (no INSERT rows). Mutually exclusive with no_create_info."
+      "default": false,
+      "description": "When enabled, passes --no-data so only DDL statements are dumped (no INSERT rows). Mutually exclusive with no_create_info."
     },
     "no_create_info": {
       "type": "boolean",
-      "description": "When true, passes --no-create-info so only INSERT statements are dumped (no DDL). Mutually exclusive with no_data."
+      "default": false,
+      "description": "When enabled, passes --no-create-info so only INSERT statements are dumped (no DDL). Mutually exclusive with no_data."
     },
     "no_tablespaces": {
       "type": "boolean",
-      "description": "Suppress CREATE LOGFILE GROUP and CREATE TABLESPACE statements (--no-tablespaces, default: true). Recommended for restoring to managed or cloud MySQL instances that do not support custom tablespaces."
+      "default": true,
+      "description": "Suppress CREATE LOGFILE GROUP and CREATE TABLESPACE statements (--no-tablespaces). Recommended for restoring to managed or cloud MySQL instances that do not support custom tablespaces."
     },
     "column_statistics": {
       "type": "boolean",
-      "description": "Query information_schema.COLUMN_STATISTICS for histogram data (default: true, matching mysqldump 8.0 behaviour). Set to false to pass --column-statistics=0, which is required when the mysqldump binary is 8.0 but the source server is MySQL 5.7 or MariaDB."
+      "default": true,
+      "description": "Query information_schema.COLUMN_STATISTICS for histogram data (matching mysqldump 8.0 behaviour). Set to false to pass --column-statistics=0, which is required when the mysqldump binary is 8.0 but the source server is MySQL 5.7 or MariaDB."
     },
     "hex_blob": {
       "type": "boolean",
+      "default": false,
       "description": "Dump BINARY, VARBINARY, BLOB, and BIT columns using hexadecimal notation (--hex-blob). Useful when the dump may be loaded on a system with different character set settings."
     },
     "set_gtid_purged": {
