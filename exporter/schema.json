@@ -38,12 +38,12 @@
     "create_db": {
       "type": "boolean",
       "default": false,
-      "description": "When true, issues CREATE DATABASE IF NOT EXISTS before restoring a single-database dump."
+      "description": "When enabled, issues CREATE DATABASE IF NOT EXISTS before restoring a single-database dump."
     },
     "force": {
       "type": "boolean",
       "default": false,
-      "description": "When true, passes --force to mysql so restore continues after SQL errors."
+      "description": "When enabled, passes --force to mysql so restore continues after SQL errors."
     },
     "mysql_bin_dir": {
       "type": "string",

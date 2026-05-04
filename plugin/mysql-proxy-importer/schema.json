@@ -53,12 +53,12 @@
     "no_data": {
       "type": "boolean",
       "default": false,
-      "description": "When true, passes --no-data so only DDL statements are dumped (no INSERT rows). Mutually exclusive with no_create_info."
+      "description": "When enabled, passes --no-data so only DDL statements are dumped (no INSERT rows). Mutually exclusive with no_create_info."
     },
     "no_create_info": {
       "type": "boolean",
       "default": false,
-      "description": "When true, passes --no-create-info so only INSERT statements are dumped (no DDL). Mutually exclusive with no_data."
+      "description": "When enabled, passes --no-create-info so only INSERT statements are dumped (no DDL). Mutually exclusive with no_data."
     },
     "no_tablespaces": {
       "type": "boolean",
